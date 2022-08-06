@@ -549,7 +549,38 @@ mission "Republic Geminus 3B"
 		has "Republic Geminus 3B: done"
 	on offer
 		conversation
+			`You land your ship and go to join the other four captains to discuss the next leg of the journey. Just as the two new captains are introducing themselves, you hear a commotion coming from the main spaceport building. An officer, apparently crew on one of the Auxiliaries, runs over to the five of you and begins explaining. "We've occupied Kornephoros!"`
+			`	"Was there a battle?" One of the captains asks."`
+			`	"No, sir, the local government surrendered control without a fight. It's quite surprising." The expressions of the other captains indicate that they are indeed surprised by the lack of resistance.`
+			choice
+				`	"Maybe we won't need the shipyard back up so soon after all."`
+					goto lucky
+				`	"Why would they surrender without a fight?"`
+			`	"Prevailing opinion seemms to be that the local militia may have been seriously outnumbered," the officer offers.`
+				goto end
+			label lucky
+			`	"We can't assume we'll be so lucky next time. The local forces might just not have been prepared, but that doesn't mean the 'Free Worlds' as a whole will just roll over and give up, not after how far they've already come." One of the captains responds.`
+			label end
+			`	Just then, a younger crewman joins the group. "I've heard there was evidence that the terrorists tested their bombs on Clink, and the local militia commanders didn't want to fight after being shown it."`
+			`	"The moon with the mines? The miners might not notice nuclear detonations on the surface, but it'd be hard to miss if you're in the area, and irradiated rock is easy to spot if you're lookingfor it. And testing inside the mines would be ridiculous. They couldn't have actually done it there." One of the captains says, sceptically.`
+			`	"Did this come from the same source that told you there are aliens in the Deep, ensign?" Another says, with a hint of a smile.`
+			`	"No, sir, that came from somewhere else, and hasn't actually been disproven." He responds, smiling as well.`
+			`	After some more back and forth between the officers about the reliability of various sources they have throughout the fleet, you go inside to check the news reports being broadcast first hand.`
+			#continue this
+				accept
+
+mission "Republic Hearts and Minds 1"
+	landing
+	name ``
+	description ``
+	source Geminus
+	destination
+	to offer
+		has "Republic Geminus 3B: done"
+	on offer
+		conversation
 			``
+				accept
 
 
 

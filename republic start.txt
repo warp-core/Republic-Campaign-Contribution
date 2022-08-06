@@ -478,7 +478,7 @@ mission "Republic Geminus 2A"
 	destination Geminus
 	passengers 1
 	to offer
-		has "Republic Gemminus 2: done"
+		has "Republic Geminus 2: done"
 	on offer
 		conversation
 			`Soon after you land, Pavitra is out of the ship and headed towards the crates and pallets of disassembled equipment. You join her as she makes her inspections.`
@@ -490,6 +490,66 @@ mission "Republic Geminus 2A"
 				`	"Why are we taking this equipment to Geminus, where we don't even have a shipyard yet, instead of building new ships here, or at another shipyard?"`
 			`	She finishes the pallet she is working through before turning to you to answer, "We don't have any shipyards that can build the ships we need, Cruisers and Carriers. No one else in human space builds warships that big. The yards where they build the Bulk Freighters don't have the equipment to handle the thicker armor used in warships, not that the Syndicate would let us build there without extortionate prices anyway.`
 			`	"The 'City-Ships' Lionheart build here are big, for sure, and made of tougher stuff than those freighters, but the production lines they use don't support the sorts of productions rates we require, and they've little room to expand those lines, so they'd just be building a new shipyard. And we do want a new Navy shipyard, and it makes sense to build it where we already have the people proficient in building our ships."`
+			`	She turns back to her work, and you leave her to it.`
+			label done
+			`	A few hours later, you get a message indicating that the ships are fully loaded and can leave for <destination> whenever you're ready.`
+				accept
+	
+	npc accompany save
+		government "Republic"
+		personality escort timid
+		fleet
+			names "republic capital"
+			variant
+				"Auxiliary (Cargo)" 4
+	
+	on visit
+		dialog #whatever
+	on fail
+		dialog #whatever
+	on complete
+		event "republic geminus timer" 14
+		conversation
+			`You make it back to <planet> without too much trouble from pirates. Pavitra thanks you for carrying her and exits your ship before you're even finished shutting everything down. When you're done and are disembarking, you receive a message from Jane. "I'm told your mission went well, apologies for not meeting you there but I had to go elsewhere on other business. We don't have anything in particular for you do to right now, but expect contact fomr me in a couple of weeks with the next task."`
+
+mission "Republic Geminus 3"
+	landing
+	name `Worker Pickup from <planet>`
+	description `Go to <destination>, where two Navy Auxiliaries carrying construction workers to aid in rebuilding Geminus will be waiting for your escort.`
+	source
+		near "New Wales" 1 100
+	destination "New Wales"
+	to offer
+		has "event: republic geminus timer"
+		not "Republic Geminus 3A: offered"
+	on offer
+		dialog `As you are landing, your comm system indicates that you have received a messag from Jane. "Hope you had a good break, captain <first>, your next job is ready and waiting. The rebuilding efforts on Geminus are at the point where they need more manpower, so we've got some construction workers coming in from <destination>. Go there and meet up with the captains of two Auxiliaries you'll be escorting, they'll provide you with more specific details."`
+
+mission "Republic Geminus 3A"
+	landing
+	name `Worker Transport`
+	description `Escort two Navy Auxiliaries to <destination>, link up with two more Auxiliaries, then escort all four to Geminus.`
+	source "New Wales"
+	destination #wherever
+	to offer
+		has "Republic Geminus 3: done"
+	on offer
+		conversation
+			`It does not take long to find the two Auxiliaries that you are to escort, though they look very different to those which you escorted previously. The cargo containers along the flanks have been replaced with much more streamlined units. Passenger compartments, or rather, barracks, since it's doubtful the Navy would compromise on capacity in exchange for comfort given the passengers Auxiliaries usually carry.`
+			`	You find the Auxiliary captains and introduce yourself. They explain that your first stop will be <destination>, where another two Auxiliaries carrying construction workers will be joining you. Then you'll be escorting all four to Geminus.`
+				accept
+
+mission "Republic Geminus 3B"
+	landing
+	name `Escort to <planet>`
+	description `Escort four Navy Auxiliaries carrying workers to help rebuild the <planet> shipyard there, in the <system> system.`
+	source #whatever
+	destination Geminus
+	to offer
+		has "Republic Geminus 3B: done"
+	on offer
+		conversation
+			``
 
 
 

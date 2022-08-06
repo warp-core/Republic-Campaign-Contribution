@@ -36,7 +36,7 @@ mission "Republic Howell 1"
 			`	You inform Colonel Howell you'll arrive on <planet> as soon as you're able.`
 				accept
 			label no
-			`	You inform Colonel Howell that you're not interested in his offer. He soons replies, acknowledging your response and wishing you the best. You can't help but feel you've turned down a significant opportunity.`
+			`	You inform Colonel Howell that you're not interested in his offer. He soon replies, acknowledging your response and wishing you the best. You can't help but feel you've turned down a significant opportunity.`
 				decline
 	on accept
 		log "People" "Marcus Howell" `Howell is a Colonel in the Republic Navy currently stationed on Geminus.`
@@ -145,7 +145,7 @@ mission "Republic Pirate Patrol1"
 			`	Colonel Howell sighs. "I understand you've made your decision. It's not an easy thing to commit to either side, especially in a conflict like this." You say goodbye to Colonel Howell and Commander Melgrew, and then leave the office.`
 				decline
 			label join
-			`	"Good," Howell says. "We'll get started, then. For the time being, you'll report to Jane. She needs some reconaissance done in systems with substantial pirate activity. You two are dismissed." You leave his office with Melgrew and make your way to the spaceport.`
+			`	"Good," Howell says. "We'll get started, then. For the time being, you'll report to Jane. She needs some reconnaissance done in systems with substantial pirate activity. You two are dismissed." You leave his office with Melgrew and make your way to the spaceport.`
 			`	"First on out list, like Marcus said, is scouting. I need you pulling flybys on three systems: <waypoints>. Report back to me with your sensor logs when you're done. Oh, and your payment is <payment>, which should only go up from here. Got it?"`
 			choice
 				`	"Got it."`
@@ -277,8 +277,8 @@ mission "Republic Geminus 1"
 		dialog phrase "Republic Mission Failed"
 	on offer
 		conversation
-			`After landing your ship, you make your way towards the pad where Howell's cruiser is settling down, Jane is also waiting nearby, coffee in hand. Howell is ammong the last of those to disembark from the ship and gestures for you and Jane to follow him as he strides past. He leads you both to his office."`
-			`	Once inside, Jane moves to the coffee station, having finished her previous mug, Howell, meanshile, seats himself at his desk.`
+			`After landing your ship, you make your way towards the pad where Howell's cruiser is settling down, Jane is also waiting nearby, coffee in hand. Howell is among the last of those to disembark from the ship and gestures for you and Jane to follow him as he strides past. He leads you both to his office."`
+			`	Once inside, Jane moves to the coffee station, having finished her previous mug, Howell, meanwhile, seats himself at his desk.`
 			`	Noticing your sidewards glance towards Jane, Howell speaks up: "She really likes the stuff, can't walk by a coffee machine without getting a refill. You'll get used to it, eventually."`
 			`	"Would you like anything, <first>?" Jane asks.`
 			choice
@@ -300,7 +300,7 @@ mission "Republic Geminus 1"
 			choice
 				`	"No, I'm ready to go."`
 			label end
-			`	"Excellent," Howell says, "Jane will meet you on Geminus to discuss next steps after you arrive with the cargo. If you're concerned about having to defend the convoy against pirates, you should avoid the stratch of uninhabited systems south of here. It'll take a little longer, but better the ships arrive late than with a bunch of holes through them, or not at all." He dismisses you and you make your way back to your ship.`
+			`	"Excellent," Howell says, "Jane will meet you on Geminus to discuss next steps after you arrive with the cargo. If you're concerned about having to defend the convoy against pirates, you should avoid the stretch of uninhabited systems south of here. It'll take a little longer, but better the ships arrive late than with a bunch of holes through them, or not at all." He dismisses you and you make your way back to your ship.`
 				accept
 	npc accompany save
 		government "Republic"
@@ -328,7 +328,7 @@ mission "Republic Geminus 1B"
 			`	The inside of the hangar designated for your fleet doesn't do the Syndicate's image any favors, either. Workers are actively repairing parts of the walls and ceiling that you feel should've been replaced long ago, and the rickety scaffolding they've erected for the repair crews is worrying, to say the least. The air in the hangar is also thick and stagnant; almost gag-inducing. You quickly call over the captains of the Auxiliaries and make your way to the loading docks. It takes about ten minutes to traverse the maze of corridors before you reach your destination.`
 			`	Upon arriving at the docks, several Syndicate dockworkers call you over to a large collection of cargo containers filled with the building materials bound for Geminus. "Took you long enough," one says with a cigarette hanging out of his mouth. "We've been waiting here for hours  for you Navy jarheads. One of your own came by here about a month ago and acted like they owned the place. I tell ya, my boss doesn't pay me enough to put up with you people."`
 			choice
-				`	(Apologise for the delay and get on with the work at hand.)`
+				`	(Apologize for the delay and get on with the work at hand.)`
 					goto end
 				`	(Threaten the dockworker; he ought to be more polite if he wishes to avoid injury.)`
 					goto fight
@@ -359,7 +359,7 @@ mission "Republic Geminus 1B"
 			`	"No. They wouldn't care, that's the Syndicate for you. If they did anything, it'd be firing me, or at least docking some pay for being a 'troublemaker'. And I wasn't about to call his bluff; no way am I putting my wife, daughter and two sons in danger."`
 			choice
 				`	"Can you describe him?"
-			`	"I can do better," he says, standing up and walking to a filing cabinet. The drawers rattle and clunk as he retrieves an envelope, emptying it onto the table, several photos, when he returns. "I looked through security footage on the day he came through, in case I needed to 'disappear' for a bit." On a photo showing several Navy personnel walking alongside some forklifts, he points to one in particular, someone you recognise, Ranulph Hines. "That's him," he says.`
+			`	"I can do better," he says, standing up and walking to a filing cabinet. The drawers rattle and clunk as he retrieves an envelope, emptying it onto the table, several photos, when he returns. "I looked through security footage on the day he came through, in case I needed to 'disappear' for a bit." On a photo showing several Navy personnel walking alongside some forklifts, he points to one in particular, someone you recognize, Ranulph Hines. "That's him," he says.`
 			choice
 				`	"I see. I'll keep an eye out for him."`
 					goto thank
@@ -376,10 +376,10 @@ mission "Republic Geminus 1B"
 			`	"So you just let people like that command ships for you? Knowing that this is the sort of people they are?" He responds, some of the anger from earlier returning.`
 			`	"Hines is most certainly not representative of Navy officers, and he is not above the rules. He recently received disciplinary action for something else he's done," you reassure him. "Hines has worked his way up through the ranks; he isn't bad at what he does, sometimes he just gets carried away, and hasn't yet done anything so extreme as to be thrown out. I do not have the authority within the Navy to do much about him myself, but I'll make sure the right people hear about what he's done here, and only the right people; he shouldn't be allowed to get away with this." He seems to accept what you've said and calms down.`
 			label thank
-			`	He thanks you, "Oh, and mmy name's Hadley, by the way, Lucas Hadley. Now, we ought to be getting back, the guys should be just about done with the cargo by now."`
+			`	He thanks you, "Oh, and my name's Hadley, by the way, Lucas Hadley. Now, we ought to be getting back, the guys should be just about done with the cargo by now."`
 			`	You both get up from the table and you make your way towards the hangar where your ship is parked.`
 			label end
-			`	As the last containers are loaded onto the Auxiliaries, your communicator beeps. indicating that you've received a message. It is from Commander Melgrew, informing you that there might be a heightened pirate presense on the way to <system>, even in orbit of <planet>. She says you shouldn't try to fight any in the system and instead just get the freighters to the surface as quickly as possible. It is concerning that pirates are able to make and maintain inroads so far into Republic territory. Hopefully, they won't cause too much trouble.`
+			`	As the last containers are loaded onto the Auxiliaries, your communicator beeps. indicating that you've received a message. It is from Commander Melgrew, informing you that there might be a heightened pirate presence on the way to <system>, even in orbit of <planet>. She says you shouldn't try to fight any in the system and instead just get the freighters to the surface as quickly as possible. It is concerning that pirates are able to make and maintain inroads so far into Republic territory. Hopefully, they won't cause too much trouble.`
 				accept
 	
 	npc accompany save
@@ -413,14 +413,14 @@ mission "Republic Geminus 1B"
 				set "told Melgrew about Hadley"
 			`	"Before you go, there is something... concerning that you ought to know." You say.`
 			`	Her expression is a mixture between intrigue and concern, "Oh? What is it?"`
-			`	"One of the dockworkers was rather aggressive, seemed to have encountered an officer recently who soured his attitude towards the Navy. I convinced him to talk to me about it, and it turns out the officer he encountered was Hines. He apparently attacked hte man for not accepting Hines' assertion that they aren't grateful enough for the Navy's protection. And then he threatened to kill him and his family if he told anyone what had happened." You explain.`
+			`	"One of the dockworkers was rather aggressive, seemed to have encountered an officer recently who soured his attitude towards the Navy. I convinced him to talk to me about it, and it turns out the officer he encountered was Hines. He apparently attacked the man for not accepting Hines' assertion that they aren't grateful enough for the Navy's protection. And then he threatened to kill him and his family if he told anyone what had happened." You explain.`
 			`	Melgrew sighs. "Hines really is getting out of control, thank you for investigating in the face of hostilities, and for telling me about this. I'll pass it on to the Colonel, discretely."`
 				decline
 			label fine
 			action
 				fine 1000000
 			`	You approach her slowly. When she turns to you, the look on her face indicates that she has learned of your altercation with the dockworker and is not willing to overlook it.`
-			`	"Captain," she begins, sternly, "it's good that you've got the freighters here in tact, but other events on your journey are concerning." She pauses, drinking from her flask. "Getting into fights with dockworkers, or anyone else for that matter, isn't acceptable, reglardless of what they've said to you. We don't need this sort of thing from you, Hines is enough. You're lucky captain <auxcaptain1lastname> was there to stop you, otherwise you could be looking at imprisonment. Instead, you can expect to pay a fine of a million credits. Do you understand?"`
+			`	"Captain," she begins, sternly, "it's good that you've got the freighters here in tact, but other events on your journey are concerning." She pauses, drinking from her flask. "Getting into fights with dockworkers, or anyone else for that matter, isn't acceptable, regardless of what they've said to you. We don't need this sort of thing from you, Hines is enough. You're lucky captain <auxcaptain1lastname> was there to stop you, otherwise you could be looking at imprisonment. Instead, you can expect to pay a fine of a million credits. Do you understand?"`
 			choice
 				`	"Yes, commander."`
 				# Should there be a 'no' option? What should happen after that?
@@ -455,8 +455,8 @@ mission "Republic Geminus 2"
 			`	"While pirates generally avoid the Deep, and don't last long if they do choose to venture that way, this is important enough that we want more than just the freighters alone, just in case."`
 			label specialist
 			`	She seems to remember the other woman at the table and gestures to him. "This is Pavitra Dasari, she's a technical recovery specialist working on the rebuilding efforts. She'll be joining you on the journey to check out the equipment before you load it."`
-			`	"Technical recovery specislit?" You ask.`
-			`	She nods, and begins explaining, "It's my job to make sure that the new shipyard is up to at least teh same standards as the old one. It's not just about making sure that the original plans a specifications are followed, many of those are decades old by now. In that time, numerous upgrades were made to the facilities and systems. And then there's the smaller changes made by the people actually working here. We don't want to build a new shipyard that has all the same little issues and inefficiencies that were corrected in the old one in the years since it was built."`
+			`	"Technical recovery specialist?" You ask.`
+			`	She nods, and begins explaining, "It's my job to make sure that the new shipyard is up to at least the same standards as the old one. It's not just about making sure that the original plans and specifications are followed, many of those are decades old by now. In that time, numerous upgrades were made to the facilities and systems. And then there's the smaller changes made by the people actually working here. We don't want to build a new shipyard that has all the same little issues and inefficiencies that were corrected in the old one in the years since it was built."`
 			`	"That sounds like important work. How are you going to find out about all those changes?" You ask.`
 			`	"Fortunately, many of those changes were documented, that information just isn't necessarily stored where the original plans were. And I've also been talking to as many of the people who have worked here as I can to fill in the gaps. It's a lot of work, but it'll mean we have the best shipyard possible."`
 			`	You thank her for the detailed explanation and Jane let's you go, as she gets up to refill her coffee. You show Pavitra to one of the bunks aboard your ship.`
@@ -482,13 +482,14 @@ mission "Republic Geminus 2A"
 	on offer
 		conversation
 			`Soon after you land, Pavitra is out of the ship and headed towards the crates and pallets of disassembled equipment. You join her as she makes her inspections.`
-			`	"How does it look?" You enquire.`
+			`	"How does it look?" You inquire.`
 			`	"Good, so far. I don't really expect to find any major issues here, but it's better to be safe, and anything I do find can easily be corrected while we're here." She explains as she moves on to another pallet, "This is really just a high level inspection, it's not possible for me to go through all the details in a reasonable amount of time here."`
 			choice
 				`	(Leave her to her work.)`
 					goto done
 				`	"Why are we taking this equipment to Geminus, where we don't even have a shipyard yet, instead of building new ships here, or at another shipyard?"`
-			`	She finishes the pallet she is working through before turning to you to answer, "We don't have any shipyards that can build the ships we need, Cruisers and Cariers. No one else in human space builds warships that big. The yards where they build the Bulk Freighters don't have the equipment to handle the thicker armor used in warships, not that the Syndicate would let us build there without extortionate prices anyway.`
+			`	She finishes the pallet she is working through before turning to you to answer, "We don't have any shipyards that can build the ships we need, Cruisers and Carriers. No one else in human space builds warships that big. The yards where they build the Bulk Freighters don't have the equipment to handle the thicker armor used in warships, not that the Syndicate would let us build there without extortionate prices anyway.`
 			`	"The 'City-Ships' Lionheart build here are big, for sure, and made of tougher stuff than those freighters, but the production lines they use don't support the sorts of productions rates we require, and they've little room to expand those lines, so they'd just be building a new shipyard. And we do want a new Navy shipyard, and it makes sense to build it where we already have the people proficient in building our ships."`
+
 
 

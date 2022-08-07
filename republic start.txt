@@ -401,10 +401,10 @@ mission "Republic Geminus 1B"
 				`	"None at all."`
 				`	"Let's just say it's a good thing the Auxiliaries are durable freighters."`
 					goto durable
-			`	"Good to hear, your next trip should be similarly uneventful. You'll need space for a passenger. Find me in the spaceport when you're ready."`
+			`	"Good to hear, you shouldn't have any trouble with the next job, either, then. Find me in the spaceport in a few hours and I'll tell you more."`
 				goto choice
 			label durable
-			`	"They were made that way for a reason, though hopefully, you won't need to rely on their strength so much on the next trip. I'll tell you more about that in a few hours. You'll need space for a passenger. Find me in the spaceport when you're ready."`
+			`	"They were made that way for a reason. Find me in the spaceport in a few hours and we can discuss the next job."`
 			label choice
 				`	(Say nothing.)`
 					decline
@@ -432,6 +432,126 @@ mission "Republic Geminus 1B"
 			`	She stops and turns back to you. "Yes, for now. But don't expect that to continue if this becomes a repeat problem."`
 
 mission "Republic Geminus 2"
+	name `Worker Pickup from <planet>`
+	description `Go to <destination>, where two Navy Auxiliaries carrying construction workers to aid in rebuilding Geminus will be waiting for your escort.`
+	source Geminus
+	destination "New Wales"
+	to offer
+		has "Republic Geminus 1B: done"
+	on offer
+		conversation
+			`You find Jane in a cafeteria, working on a tablet. She looks up as you sit down. "Ah, captain, ready for the next step? Now, we've got the building materials here, but we need more manpower. To that end, you'll be escorting some more Auxiliaries, carrying construction workers from <destination>. Two will meet you there, then you'll collect another two #inwherever before finally returning here."`
+			choice
+				`	"All right, I'll head there immediately."`
+					accept
+				`	"Should I expect to encounter many pirates this time?"`
+			`	"We're not aware of any unusual pirate activity in the area, but I'll be sure to let you know if anything comes up."`
+				accept
+
+mission "Republic Geminus 2A"
+	landing
+	name `Worker Transport`
+	description `Escort two Navy Auxiliaries to <destination>, link up with two more Auxiliaries, then escort all four to Geminus.`
+	source "New Wales"
+	destination #wherever
+	to offer
+		has "Republic Geminus 3: done"
+	on offer
+		conversation
+			`It does not take long to find the two Auxiliaries that you are to escort, though they look very different to those which you escorted previously. The cargo containers along the flanks have been replaced with much more streamlined units. Passenger compartments, or rather, barracks, since it's doubtful the Navy would compromise on capacity in exchange for comfort given the passengers Auxiliaries usually carry.`
+			# maybe some commentary on the conditions on this world, workers wanting to get away, even if temporarily, to work on Geminus, hoping to make more money than they could here.
+			# when the other pickup location is decided, whichever one has more to talk about should come first since the conversation on the next planet is laregely dominated by the news of the occupation of Kornephoros.
+			`	You find the Auxiliary captains and introduce yourself. They confirm the plan Jane gave you: your first stop will be <destination>, where another two Auxiliaries carrying construction workers will be joining you. Then you'll be escorting all four to Geminus, and you return to your ship to prepare for the journey.`
+				accept
+	
+	npc accompany save
+		government "Republic"
+		personality escort timid
+		fleet
+			names "republic capital"
+			variant
+				"Auxiliary (Transport)" 2
+
+mission "Republic Geminus 2B"
+	landing
+	name `Escort to <planet>`
+	description `Escort four Navy Auxiliaries carrying workers to help rebuild the <planet> shipyard there, in the <system> system.`
+	source #whatever
+	destination Geminus
+	to offer
+		has "Republic Geminus 3B: done"
+	on offer
+		conversation
+			`You land your ship and go to join the other four captains to discuss the next leg of the journey. Just as the two new captains are introducing themselves, you hear a commotion coming from the main spaceport building. An officer, apparently crew on one of the Auxiliaries, runs over to the five of you and begins explaining. "We've occupied Kornephoros!"`
+			`	"Was there a battle?" One of the captains asks."`
+			`	"No, sir, the local government surrendered control without a fight. It's quite surprising." The expressions of the other captains indicate that they are indeed surprised by the lack of resistance.`
+			choice
+				`	"Maybe we won't need the shipyard back up so soon after all."`
+					goto lucky
+				`	"Why would they surrender without a fight?"`
+			`	"Prevailing opinion seemms to be that the local militia may have been seriously outnumbered," the officer offers.`
+				goto end
+			label lucky
+			`	"We can't assume we'll be so lucky next time. The local forces might just not have been prepared, but that doesn't mean the 'Free Worlds' as a whole will just roll over and give up, not after how far they've already come." One of the captains responds.`
+			label end
+			`	Just then, a younger crewman joins the group. "I've heard there was evidence that the terrorists tested their bombs on Clink, and the local militia commanders didn't want to fight after being shown it."`
+			`	"The moon with the mines? The miners might not notice nuclear detonations on the surface, but it'd be hard to miss if you're in the area, and irradiated rock is easy to spot if you're lookingfor it. And testing inside the mines would be ridiculous. They couldn't have actually done it there." One of the captains says, sceptically.`
+			`	"Did this come from the same source that told you there are aliens in the Deep, ensign?" Another says, with a hint of a smile.`
+			`	"No, sir, that came from somewhere else, and hasn't actually been disproven." He responds, smiling as well.`
+			`	After some more back and forth between the officers about the reliability of various sources they have throughout the fleet, you go inside to check the news reports being broadcast first hand.`
+			#continue this
+				accept
+
+	npc accompany save
+		government "Republic"
+		personality escort timid
+		fleet
+			names "republic capital"
+			variant
+				"Auxiliary (Transport)" 4
+
+	on complete
+		event "republic geminus timer" 14
+		conversation
+			`Once the Auxiliaries are settled down and begin unloading their passengers, you find Jane waiting near your ship, sipping coffee from a flask while she waits for you.`
+			`	"I'm sure you've heard about the occupation of Kornephoros?" She begins.`
+			choice
+				`	"Yes, it sounded like it was an easy victory."`
+					goto easy
+				`	"Yes, though I don't expect future operations to go so smoothly."`
+			`	She nods, "And so you shouldn't. We don't expect the 'Free Worlds Council' to give up as easily as the militia in Kornephoros did.
+				goto choice
+			label easy
+			`	"It was, no resistance at all, in fact," she narrows her eyes, "but we shouldn't expect this to be the end. The Free Worlds Council won't give up so easily."`
+			label choice
+			choice
+				`	"'Free Worlds Council'?"`
+				`	"So, what are we doing next?"`
+					goto next
+			`	"I'm surprised you haven't heard of them." She says, with slightly raised eyebrows. "They're a group of five people who seem to be leading the Free Worlds. There's supposed to be a senate composed of elected representatives from the various worlds, but from what we can tell, most of the decisions at the moment are being made by the Council."`
+			`	"That doesn't seem very democratic," you note.`
+			`	"No, it doesn't, words like 'oligarchy' come to mind." Jane agrees."`
+			`	"So, what are we doing next?" You ask."
+			label next
+			`	"Well, for right now, we don't have any jobs for you, but you should expect to hear from me in a few weeks when we're ready for the next steps towards rebuilding this shipyard." She explains.`
+
+event "republic geminus timer"
+
+mission "Republic Geminus 3"
+	landing
+	name `Return to Melgrew`
+	description `Return to <destination> where Jane Melgrew has more work for you.`
+	source
+		near Castor 1 100
+	destination Geminus
+	to offer
+		has "event: republic geminus timer"
+	on offer
+		conversation
+			`Shortly after you land you receive a message from Jane instructing you to report to her on Geminus for your next task.`
+
+mission "Republic Geminus 3A"
+	landing
 	name "Collecting equipment"
 	description "Escort these four Navy Auxiliaries to <destination> to collect heavy construction equipment for Geminus."
 	source Geminus
@@ -439,7 +559,7 @@ mission "Republic Geminus 2"
 	blocked "You've arrived at the spaceport, but Melgrew told you to have space for a passenger, so come back when you have that."
 	passengers 1
 	to offer
-		has "Republic Geminus 1B: done"
+		has "Republic Geminus 3: done"
 	on visit
 		dialog #whatever
 	on fail
@@ -470,7 +590,7 @@ mission "Republic Geminus 2"
 			variant
 				"Auxiliary (Cargo)" 4
 
-mission "Republic Geminus 2A"
+mission "Republic Geminus 3B"
 	landing
 	name `Collecting equipment from the Deep`
 	description `Escort four Navy Auxiliaries, carrying heavy construction equipment, to <destination>.`
@@ -478,7 +598,7 @@ mission "Republic Geminus 2A"
 	destination Geminus
 	passengers 1
 	to offer
-		has "Republic Geminus 2: done"
+		has "Republic Geminus 3A: done"
 	on offer
 		conversation
 			`Soon after you land, Pavitra is out of the ship and headed towards the crates and pallets of disassembled equipment. You join her as she makes her inspections.`
@@ -510,64 +630,7 @@ mission "Republic Geminus 2A"
 	on complete
 		event "republic geminus timer" 14
 		conversation
-			`You make it back to <planet> without too much trouble from pirates. Pavitra thanks you for carrying her and exits your ship before you're even finished shutting everything down. When you're done and are disembarking, you receive a message from Jane. "I'm told your mission went well, apologies for not meeting you there but I had to go elsewhere on other business. We don't have anything in particular for you do to right now, but expect contact fomr me in a couple of weeks with the next task."`
-
-mission "Republic Geminus 3"
-	landing
-	name `Worker Pickup from <planet>`
-	description `Go to <destination>, where two Navy Auxiliaries carrying construction workers to aid in rebuilding Geminus will be waiting for your escort.`
-	source
-		near "New Wales" 1 100
-	destination "New Wales"
-	to offer
-		has "event: republic geminus timer"
-		not "Republic Geminus 3A: offered"
-	on offer
-		dialog `As you are landing, your comm system indicates that you have received a messag from Jane. "Hope you had a good break, captain <first>, your next job is ready and waiting. The rebuilding efforts on Geminus are at the point where they need more manpower, so we've got some construction workers coming in from <destination>. Go there and meet up with the captains of two Auxiliaries you'll be escorting, they'll provide you with more specific details."`
-
-mission "Republic Geminus 3A"
-	landing
-	name `Worker Transport`
-	description `Escort two Navy Auxiliaries to <destination>, link up with two more Auxiliaries, then escort all four to Geminus.`
-	source "New Wales"
-	destination #wherever
-	to offer
-		has "Republic Geminus 3: done"
-	on offer
-		conversation
-			`It does not take long to find the two Auxiliaries that you are to escort, though they look very different to those which you escorted previously. The cargo containers along the flanks have been replaced with much more streamlined units. Passenger compartments, or rather, barracks, since it's doubtful the Navy would compromise on capacity in exchange for comfort given the passengers Auxiliaries usually carry.`
-			`	You find the Auxiliary captains and introduce yourself. They explain that your first stop will be <destination>, where another two Auxiliaries carrying construction workers will be joining you. Then you'll be escorting all four to Geminus.`
-				accept
-
-mission "Republic Geminus 3B"
-	landing
-	name `Escort to <planet>`
-	description `Escort four Navy Auxiliaries carrying workers to help rebuild the <planet> shipyard there, in the <system> system.`
-	source #whatever
-	destination Geminus
-	to offer
-		has "Republic Geminus 3B: done"
-	on offer
-		conversation
-			`You land your ship and go to join the other four captains to discuss the next leg of the journey. Just as the two new captains are introducing themselves, you hear a commotion coming from the main spaceport building. An officer, apparently crew on one of the Auxiliaries, runs over to the five of you and begins explaining. "We've occupied Kornephoros!"`
-			`	"Was there a battle?" One of the captains asks."`
-			`	"No, sir, the local government surrendered control without a fight. It's quite surprising." The expressions of the other captains indicate that they are indeed surprised by the lack of resistance.`
-			choice
-				`	"Maybe we won't need the shipyard back up so soon after all."`
-					goto lucky
-				`	"Why would they surrender without a fight?"`
-			`	"Prevailing opinion seemms to be that the local militia may have been seriously outnumbered," the officer offers.`
-				goto end
-			label lucky
-			`	"We can't assume we'll be so lucky next time. The local forces might just not have been prepared, but that doesn't mean the 'Free Worlds' as a whole will just roll over and give up, not after how far they've already come." One of the captains responds.`
-			label end
-			`	Just then, a younger crewman joins the group. "I've heard there was evidence that the terrorists tested their bombs on Clink, and the local militia commanders didn't want to fight after being shown it."`
-			`	"The moon with the mines? The miners might not notice nuclear detonations on the surface, but it'd be hard to miss if you're in the area, and irradiated rock is easy to spot if you're lookingfor it. And testing inside the mines would be ridiculous. They couldn't have actually done it there." One of the captains says, sceptically.`
-			`	"Did this come from the same source that told you there are aliens in the Deep, ensign?" Another says, with a hint of a smile.`
-			`	"No, sir, that came from somewhere else, and hasn't actually been disproven." He responds, smiling as well.`
-			`	After some more back and forth between the officers about the reliability of various sources they have throughout the fleet, you go inside to check the news reports being broadcast first hand.`
-			#continue this
-				accept
+			`You make it back to <planet> without too much trouble from pirates. Pavitra thanks you for carrying her and exits your ship before you're even finished shutting everything down. When you're done and are disembarking, you receive a message from Jane. "Sorry I'm not able to meet you in person to debrief, <first>, but I had to see to business elsewhere. For now, I understand Commander Amelia Shah has work for you. You should find her in the spaceport."`
 
 mission "Republic Hearts and Minds 1"
 	landing

@@ -481,6 +481,7 @@ mission "Republic Geminus 2B"
 	to offer
 		has "Republic Geminus 3B: done"
 	on offer
+		event "capture of kornephoros"
 		conversation
 			`You land your ship and go to join the other four captains to discuss the next leg of the journey. Just as the two new captains are introducing themselves, you hear a commotion coming from the main spaceport building. An officer, apparently crew on one of the Auxiliaries, runs over to the five of you and begins explaining. "We've occupied Kornephoros!"`
 			`	"Was there a battle?" One of the captains asks."`
@@ -634,7 +635,7 @@ mission "Republic Geminus 3B"
 
 mission "Republic Hearts and Minds 1"
 	landing
-	name ``
+	name `Dirt Belt Diplomacy`
 	description ``
 	source Geminus
 	destination

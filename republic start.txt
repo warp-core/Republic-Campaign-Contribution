@@ -636,14 +636,14 @@ mission "Republic Geminus 3B"
 mission "Republic Hearts and Minds 1"
 	landing
 	name `Dirt Belt Diplomacy`
-	description ``
+	description `Transport Amelia Shah to New Iceland where Anton Kent will join you, before proceeding south on a diplomatic tour of the south end of the Dirt Belt to reinforce confidence and trust in the Republic there.`
 	source Geminus
-	destination
+	destination "New Iceland"
 	to offer
 		has "Republic Geminus 3B: done"
 	on offer
 		conversation
-			``
+			`Soon after you arrive in the spaceport, you hear brisk footsteps coming towards you. You turn towards the source of the sound to see Commander Amelia Shah`
 				accept
 
 
